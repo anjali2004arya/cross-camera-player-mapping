@@ -1,240 +1,135 @@
-\### ✅ `README.md` (fully ready)
-
-
+### ✅ Final `README.md`
 
 ```markdown
+# 🎯 Cross-Camera Player Mapping
 
-\# 🎯 Cross-Camera Player Mapping – Internship Assignment
-
-
-
-This project was completed as part of an internship assignment by \*\*Anjali Arya\*\*. The goal is to track football players across two different video feeds (`broadcast.mp4` and `tacticam.mp4`) and consistently match their identities across both views.
-
-
+This project was developed as part of an internship assignment by **Anjali Arya**.  
+It focuses on identifying and consistently tracking football players across two different video perspectives — `broadcast.mp4` and `tacticam.mp4`.
 
 ---
 
+## 🧠 Problem Statement
 
+Given two video feeds of the same football match:
+- 📽️ `broadcast.mp4` (TV view)
+- 🎥 `tacticam.mp4` (top-down view)
 
-\## 📁 Folder Structure
+The task is to:
+1. Detect and track players in both videos.
+2. Assign consistent IDs across both views.
+3. Output the mapping in a structured CSV format.
 
+---
 
+## 🗂️ Folder Structure
 
 ```
-
-
 
 cross-camera-player-mapping/
-
-├── best.pt                     # YOLOv11 trained model weights
-
-├── broadcast.mp4               # Broadcast camera video (input)
-
-├── tacticam.mp4                # Tacticam view video (input)
-
-├── broadcast\\\_tracking.csv      # Tracked player positions from broadcast
-
-├── tacticam\\\_tracking.csv       # Tracked player positions from tacticam
-
-├── player\\\_id\\\_mapping.csv       # Final ID mappings across both views
-
-├── track\\\_and\\\_save\\\_broadcast.py # Tracking script for broadcast video
-
-├── track\\\_and\\\_save\\\_tacticam.py  # Tracking script for tacticam video
-
-├── match\\\_players.py            # Script to perform ID matching
-
-├── requirements.txt            # Python dependencies
-
-├── report.md                   # Methodology \& analysis
-
-└── README.md                   # Setup and usage guide
-
-
+├── best.pt                    # YOLOv11 trained model weights
+├── broadcast.mp4              # Broadcast camera input
+├── tacticam.mp4               # Tacticam camera input
+├── broadcast\_tracking.csv     # Tracking results for broadcast video
+├── tacticam\_tracking.csv      # Tracking results for tacticam video
+├── player\_id\_mapping.csv      # Final cross-view player ID mapping
+├── track\_and\_save\_broadcast.py # Script for broadcast tracking
+├── track\_and\_save\_tacticam.py  # Script for tacticam tracking
+├── match\_players.py           # Script for cross-camera ID matching
+├── requirements.txt           # Dependency list
+├── report.md                  # Methodology & observations
+└── README.md                  # This file
 
 ````
 
-
-
 ---
 
+## 🧪 Installation
 
-
-\## 🧪 Requirements
-
-
-
-Install dependencies using:
-
-
+Install the required Python packages:
 
 ```bash
-
 pip install -r requirements.txt
-
 ````
 
-
-
-\### Libraries used:
-
-
-
-\* `ultralytics`
-
-\* `norfair`
-
-\* `opencv-python`
-
-\* `filterpy`
-
-\* `numpy`
-
-
-
-Tested on Python 3.10+
-
-
+✅ Tested on **Python 3.10**
 
 ---
 
+## 🚀 Usage
 
-
-\## 🚀 How to Run the Project
-
-
-
-\### 1️⃣ Track Broadcast Video
-
-
+### 1️⃣ Track players in broadcast video
 
 ```bash
-
-python track\_and\_save\_broadcast.py
-
+python track_and_save_broadcast.py
 ```
 
-
-
-➡️ Generates: `broadcast\_tracking.csv`
-
-
+➡️ Generates `broadcast_tracking.csv`
 
 ---
 
-
-
-\### 2️⃣ Track Tacticam Video
-
-
+### 2️⃣ Track players in tacticam video
 
 ```bash
-
-python track\_and\_save\_tacticam.py
-
+python track_and_save_tacticam.py
 ```
 
-
-
-➡️ Generates: `tacticam\_tracking.csv`
-
-
+➡️ Generates `tacticam_tracking.csv`
 
 ---
 
-
-
-\### 3️⃣ Match Players Across Views
-
-
+### 3️⃣ Match players across both videos
 
 ```bash
-
-python match\_players.py
-
+python match_players.py
 ```
 
-
-
-➡️ Generates: `player\_id\_mapping.csv`
-
-
+➡️ Generates `player_id_mapping.csv`
 
 ---
 
-
-
-\## 🎯 Sample Output (from match\\\_players.py)
-
-
+## 🧾 Sample Output (From `match_players.py`)
 
 ```
-
 📽️ Players in broadcast: 11
-
 🎥 Players in tacticam: 21
 
+Tacticam_ID  -->  Broadcast_ID   |   Distance
+     2        -->     5          |   3.19
+     9        -->     7          |   11.10
+    13        -->     5          |   145.53
 
-
-Tacticam\_ID  -->  Broadcast\_ID   |   Distance
-
-&nbsp;    2       -->     5           |   3.19
-
-&nbsp;    9       -->     7           |   11.10
-
-&nbsp;   13       -->     5           |   145.53
-
-
-
-✅ Mapping saved to player\_id\_mapping.csv
-
+✅ Mapping saved to player_id_mapping.csv
 ```
 
+---
 
+## 💡 Features
+
+* 🧠 Fine-tuned YOLOv11 model for accurate player detection
+* 🔁 Real-time multi-object tracking using Norfair
+* 🔗 Cross-camera identity consistency using trajectory similarity
+* 🧾 Clean CSV outputs for all stages
 
 ---
 
+## ⚠️ Note
 
-
-\## 📊 What This Project Demonstrates
-
-
-
-\* ⚽ Player detection with a fine-tuned YOLOv11 model
-
-\* 🔁 Real-time multi-object tracking using Norfair
-
-\* 🔗 Cross-camera identity matching based on trajectory similarity
-
-\* 📈 Output in CSV format for easy evaluation
-
-
+Due to GitHub’s 100 MB file limit, the model file `best.pt` is not included in this repo.
+Please place your own trained `best.pt` in the project root directory before running the scripts.
 
 ---
 
+## 👩‍💻 Author
 
-
-\## 👩‍💻 Author
-
-
-
-\*\*Anjali Arya\*\*
-
-📧 email: `arya.2004anjali@gmail.com`
-
-🔗 GitHub: \[github.com/anjaliarya](https://github.com/anjaliarya)
-
-
+**Anjali Arya**
+📧 [arya.2004anjali@gmail.com](mailto:arya.2004anjali@gmail.com)
+🔗 [GitHub: @anjali2004arya](https://github.com/anjali2004arya)
 
 ---
 
+## ✅ Status
 
-
-> 💡 This repo is fully self-contained. Just place your `broadcast.mp4`, `tacticam.mp4`, and `best.pt` in the root folder and run the scripts.
-
-
-
-```
-
+🟢 Project complete and functional.
+Ready for submission.
 
 
