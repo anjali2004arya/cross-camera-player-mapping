@@ -3,7 +3,7 @@
 ```markdown
 # 🎯 Cross-Camera Player Mapping
 
-This project was developed as part of an internship assignment by **Anjali Arya**.  
+This project was developed as part of an internship assignment by Anjali Arya.  
 It focuses on identifying and consistently tracking football players across two different video perspectives — `broadcast.mp4` and `tacticam.mp4`.
 
 ---
