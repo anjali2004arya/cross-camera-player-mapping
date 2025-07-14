@@ -1,9 +1,6 @@
-# ✅ Player Re-Identification in Sports Footage
-
-```markdown
 # 🎯 Cross-Camera Player Mapping
 
-This project was developed as part of an internship assignment by Anjali Arya.  
+This project was developed as part of an internship assignment by **Anjali Arya**.  
 It focuses on identifying and consistently tracking football players across two different video perspectives — `broadcast.mp4` and `tacticam.mp4`.
 
 ---
@@ -23,22 +20,20 @@ The task is to:
 
 ## 🗂️ Folder Structure
 
-```
-
+```text
 cross-camera-player-mapping/
 ├── best.pt                    # YOLOv11 trained model weights
 ├── broadcast.mp4              # Broadcast camera input
 ├── tacticam.mp4               # Tacticam camera input
-├── broadcast\_tracking.csv     # Tracking results for broadcast video
-├── tacticam\_tracking.csv      # Tracking results for tacticam video
-├── player\_id\_mapping.csv      # Final cross-view player ID mapping
-├── track\_and\_save\_broadcast.py # Script for broadcast tracking
-├── track\_and\_save\_tacticam.py  # Script for tacticam tracking
-├── match\_players.py           # Script for cross-camera ID matching
+├── broadcast_tracking.csv     # Tracking results for broadcast video
+├── tacticam_tracking.csv      # Tracking results for tacticam video
+├── player_id_mapping.csv      # Final cross-view player ID mapping
+├── track_and_save_broadcast.py # Script for broadcast tracking
+├── track_and_save_tacticam.py  # Script for tacticam tracking
+├── match_players.py           # Script for cross-camera ID matching
 ├── requirements.txt           # Dependency list
 ├── report.md                  # Methodology & observations
 └── README.md                  # This file
-
 ````
 
 ---
@@ -49,7 +44,7 @@ Install the required Python packages:
 
 ```bash
 pip install -r requirements.txt
-````
+```
 
 ✅ Tested on **Python 3.10**
 
@@ -63,7 +58,7 @@ pip install -r requirements.txt
 python track_and_save_broadcast.py
 ```
 
-➡️ Generates `broadcast_tracking.csv`
+➡️ Generates: `broadcast_tracking.csv`
 
 ---
 
@@ -73,7 +68,7 @@ python track_and_save_broadcast.py
 python track_and_save_tacticam.py
 ```
 
-➡️ Generates `tacticam_tracking.csv`
+➡️ Generates: `tacticam_tracking.csv`
 
 ---
 
@@ -83,11 +78,11 @@ python track_and_save_tacticam.py
 python match_players.py
 ```
 
-➡️ Generates `player_id_mapping.csv`
+➡️ Generates: `player_id_mapping.csv`
 
 ---
 
-## 🧾 Sample Output (From `match_players.py`)
+## 🧾 Sample Output (from `match_players.py`)
 
 ```
 📽️ Players in broadcast: 11
@@ -131,5 +126,7 @@ Please place your own trained `best.pt` in the project root directory before run
 
 🟢 Project complete and functional.
 Ready for submission.
+
+```
 
 
