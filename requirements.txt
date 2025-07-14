@@ -1,0 +1,6 @@
+torch>=2.0.0
+opencv-python>=4.8.0
+norfair==2.3.0
+filterpy==1.4.5
+ultralytics>=8.0.0
+numpy>=1.24.0,<2.3.0
